@@ -4,9 +4,11 @@ var app = express();
 
 
 app.get('/', function(req, res) {
-  res.send('hello world');
+  
 });
 
 app.post('/',function(req, res){
-	
+
 });
+
+app.use(express.static('public'));
