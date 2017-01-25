@@ -1,4 +1,4 @@
-var forecast = require("./forecast.js");
+var forecast = require("./server/forecast.js");
 
 var zipcode= process.argv[2];
 
