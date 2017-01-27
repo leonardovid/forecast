@@ -4,8 +4,8 @@ function printCord(lat, lng){
     console.log("latitude: "+lat+" longitude: "+lng);
 }
 
-function forecast(zipcode){
-    var url ="https://maps.googleapis.com/maps/api/geocode/json?address="+zipcode+"&key=AIzaSyD3ULGjizEUvrlF1Bbp-TeE4q-m7NRHqhg";
+function wheather(place, country, res){
+    var url ="https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&components=country:"+country+"&key=AIzaSyD3ULGjizEUvrlF1Bbp-TeE4q-m7NRHqhg";
     var data="";
     var request = https.get(url,function(response){
         if(response.statusCode===200){
@@ -18,9 +18,10 @@ function forecast(zipcode){
               
                 var lat=geodecoding.geometry.location.lat;
                 var lng=geodecoding.geometry.location.lng;
-                var city=geodecoding.address_components[3].long_name;
+                var city=geodecoding.formatted_address;
               
-                showWheather(lat,lng,city);
+                getForecast(lat,lng,city,res);
+                
             });
             response.on("error",function(error){
                 console.error(error.message)
@@ -32,7 +33,7 @@ function forecast(zipcode){
     });
     
 }
-function showWheather(lat,lng,city){
+function getForecast(lat, lng, city, res){
     var url ="https://api.forecast.io/forecast/180006f69b9c10514c752ae8fe5e6716/"+lat+","+lng;
     var data="";
     var request = https.get(url,function(response){
@@ -44,6 +45,7 @@ function showWheather(lat,lng,city){
             response.on("end",function(){
                 var forecast= JSON.parse(data);                              
                 console.log("City: "+city+" Sky: "+forecast.currently.summary+" Temperature: "+forecast.currently.temperature);
+                res.send(forecast.currently);
             });
             response.on("error",function(error){
                 console.error(error.message)
@@ -57,4 +59,4 @@ function showWheather(lat,lng,city){
 }
 
 
-module.exports.forecast= forecast;
+module.exports.wheather= wheather;

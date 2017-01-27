@@ -1,3 +1,4 @@
+var forecast = require('./forecast.js');
 var bodyParser = require('body-parser');
 var express = require('express');
 var router = express.Router();
@@ -9,11 +10,13 @@ router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
 router.get('/', function(req, res) {
-  res.render('search');
+    res.render('search');
 });
 
 router.post('/',function(req, res){
-res.send(req.body);
+	var res;
+	forecast.wheather(req.body.place,"AR", res);
+	
 });
 
 module.exports = router;
