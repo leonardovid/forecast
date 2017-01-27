@@ -45,7 +45,7 @@ function getForecast(lat, lng, city, res){
             response.on("end",function(){
                 var forecast= JSON.parse(data);                              
                 forecast.currently.city = city;
-                res.send(forecast.currently);
+                res.render('wheather',forecast.currently);
             });
             response.on("error",function(error){
                 console.error(error.message)
