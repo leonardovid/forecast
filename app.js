@@ -1,6 +1,6 @@
 'use strict';
 
-var routes = require("./server/routes");
+var routes = require("./server/routes.js");
 var forecast = require("./server/forecast.js");
 
 const http = require('http');
