@@ -1,19 +1,16 @@
 'use strict';
 
-var routes = require("./server/routes.js");
+
 var forecast = require("./server/forecast.js");
+var express = require('express')
+var app = express()
 
-const http = require('http');
+//Archivos estaticos
+app.use(express.static('public'));
 
-const hostname = '127.0.0.1';
-const port = 3000;
+//Rutas
+app.use(require("./server/routes.js"));
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end();
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})

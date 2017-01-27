@@ -1,14 +1,14 @@
 
 var express = require('express');
-var app = express();
+var router = express.Router();
 
 
-app.get('/', function(req, res) {
-  
+router.get('/', function(req, res) {
+  res.send('hello world');
 });
 
-app.post('/',function(req, res){
+router.post('/',function(req, res){
 
 });
 
-app.use(express.static('public'));
+module.exports = router;
