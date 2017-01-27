@@ -44,7 +44,7 @@ function getForecast(lat, lng, city, res){
             });
             response.on("end",function(){
                 var forecast= JSON.parse(data);                              
-                console.log("City: "+city+" Sky: "+forecast.currently.summary+" Temperature: "+forecast.currently.temperature);
+                forecast.currently.city = city;
                 res.send(forecast.currently);
             });
             response.on("error",function(error){
