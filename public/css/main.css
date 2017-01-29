@@ -1,0 +1,111 @@
+/*IMPORTS*/
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/*BASE*/
+body {
+	
+	background-color: #bdc3c7;
+	color: white;
+	text-align: center;
+	margin:0;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+/*HEADER*/
+.header{
+	background-color: #2c3e50;
+	color: white;
+	font-family: 'Nova Flat', cursive;
+	font-size: 16px;
+	border-radius: 5px;
+	text-align:left;
+
+}
+
+.header h3{ 
+	
+	margin-top: 0;
+	padding:20px;
+}
+
+/*CONTENT*/
+.content {
+
+	background-color: #27ae60;
+	min-height: 400px;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	
+}
+
+/*FORM*/
+#form{
+	padding-top: 60px;
+	font-size: 25px;
+	margin-left: 10%;
+	margin-right: 10%;
+
+}
+
+#place, #country{
+ 	width: 20%;
+  	height: 40px;
+ 	margin-bottom: 10px;
+ 	padding-left: 15px;
+  	background: #fff;
+  	border: none;
+  	color: #e74c3c;
+  	outline: none;
+  	display: inline-block;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+#submit_button {
+	width: 20%;
+  	height: 40px;
+ 	margin-top: 15px;
+ 	padding-left: 15px;
+  	background-color: #e74c3c;
+  	border: none;
+  	color: #fff ;
+  	outline: none;
+  	display: inline-block;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+#submit_button:hover{
+	background-color: #3498db;
+}
+
+/*WHEATHER*/
+
+#wheater{
+	padding-top: 80px;
+	font-size: 25px;
+	
+}
+
+#wheater h3{
+	margin-top: 0px;
+	margin-left: 100px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: left;
+	
+
+}
+.left{
+	float: left;
+	display: inline-block;
+	width: 50%;
+	margin-left: 10%
+}
+.rigth{
+	text-align: left;
+	display: inline-block;
+	width: 40%;
+}
+
