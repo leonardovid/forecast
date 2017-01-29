@@ -1,4 +1,4 @@
-var forecast = require('./forecast.js');
+var googleDecode = require('./google-decode.js');
 var bodyParser = require('body-parser');
 var express = require('express');
 var router = express.Router();
@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 
 router.post('/',function(req, res){
 	var res;
-	forecast.wheather(req.body.place,"AR", res);
+	googleDecode.decode(req.body.place,"AR", res);
 	
 });
 
