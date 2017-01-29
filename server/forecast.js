@@ -5,7 +5,7 @@ function printCord(lat, lng){
 }
 
 function wheather(place, country, res){
-    var url ="https://aps.googleapis.com/maps/api/geocode/json?address="+place+"&components=country:"+country+"&key=AIzaSyD3ULGjizEUvrlF1Bbp-TeE4q-m7NRHqhg";
+    var url ="https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&components=country:"+country+"&key=AIzaSyD3ULGjizEUvrlF1Bbp-TeE4q-m7NRHqhg";
     var data="";
     var request = https.get(url,function(response){
         if(response.statusCode===200){
