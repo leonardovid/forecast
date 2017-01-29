@@ -34,7 +34,7 @@ function wheather(place, country, res){
     
 }
 function getForecast(lat, lng, city, res){
-    var url ="https://api.forecast.io/forecast/180006f69b9c10514c752ae8fe5e6716/"+lat+","+lng+"?exclude=minutely,hourly,daily,alerts,flags&lang=es";
+    var url ="https://api.forecast.io/forecast/180006f69b9c10514c752ae8fe5e6716/"+lat+","+lng+"?exclude=minutely,hourly,daily,alerts,flags&lang=es&units=si";
     var data="";
     var request = https.get(url,function(response){
         if(response.statusCode===200){
